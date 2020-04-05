@@ -1,20 +1,18 @@
 import React, { useState, useEffect, useRef, useImperativeHandle } from 'react';
+
+import zenscroll from 'zenscroll';
+
 import { FadeIn } from '../shared/hoc/FadeIn';
 import { useDark } from '../shared/Theme/UseTheme';
 
 import fire from '../../fire';
 
 
-
 function Brands(props, ref) {
 
   const brandsRef = useRef();
   useImperativeHandle(ref, () => ({
-    focus: () => {
-      brandsRef.current.scrollIntoView(
-        // {behavior: "smooth", block: "nearest"}
-      );
-    }
+    focus: () => zenscroll.to(brandsRef.current, 1000)
   }));
 
   const [brandsState, setBrandsState] = useState({ brands: [], brandsLoaded: false });
