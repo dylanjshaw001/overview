@@ -1,0 +1,21 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  border-bottom: 2px solid;
+
+  &-toggle {
+    padding: 8px !important;
+    margin: 2px !important;
+    &--me {
+      &__image {
+        max-height: 34px;
+      }
+    }
+  }
+}
+

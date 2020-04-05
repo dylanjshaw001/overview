@@ -1,0 +1,57 @@
+$vinyl-size: 120px;
+
+.player {
+  width: 90vw;
+  margin: 0 auto;
+  [role="progressbar"] {
+    margin: 20px;
+    opacity: .2;
+  }
+  &-track {
+    &-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, $vinyl-size);
+      grid-auto-rows: $vinyl-size;
+      grid-gap: 10px;
+      justify-content: center;
+    }
+    &--option {
+      cursor: pointer;
+      -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+      background-size: cover;
+      transition: 
+        transform $speed-fast ease-out,
+        filter $speed-fast ease-out !important;
+      img {
+        transition: $speed-faster linear !important;
+        max-height: $vinyl-size;
+        border-radius: 6px;
+      }
+      filter: grayscale(1);
+      &:hover{
+        filter: grayscale(0);
+      }
+    }
+    &--selected {
+      background:    
+        linear-gradient(30deg, transparent 40%, rgba(42, 41, 40, .85) 40%) no-repeat 100% 0,
+        linear-gradient(60deg, rgba(42, 41, 40, .85) 60%, transparent 60%) no-repeat 0 100%,
+        repeating-radial-gradient(#2a2928, #2a2928 4px, #ada9a0 5px, #2a2928 6px);
+      animation: spin $speed-slowest infinite linear;
+      animation-delay: $speed-faster;
+      border-radius: 100px !important;
+      img {
+        max-height: 50px;
+        border-radius: 100px;
+      }
+      &.playing{
+        animation-play-state: running;
+      }
+      &.paused {
+        animation-play-state: paused;
+      }
+    }
+  }
+}
+
+

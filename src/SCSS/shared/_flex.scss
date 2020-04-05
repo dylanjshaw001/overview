@@ -1,0 +1,21 @@
+.centered-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+}
+
+.centered-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.center {
+  align-items: center;
+}
+.bottom {
+  align-items: flex-end;
+}

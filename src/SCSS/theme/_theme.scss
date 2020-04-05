@@ -1,0 +1,130 @@
+.theme {
+
+  &-nav {
+    &--dark {
+      background-color: $color-base-green-dark;
+      border-color: $color-accent-white !important;
+      button {
+        color: $color-accent-white !important;
+      }
+    }
+    &--light {
+      background-color: $color-base-green-light;
+      border-color: $color-accent-white !important;
+      button {
+        color: $color-accent-white !important;
+      }
+    }
+  }
+
+  &-profile {
+    &--dark {
+      background-color: $color-base-green-light;
+      color: $color-accent-white;
+    }
+    &--light {
+      background-color: $color-base-yellow;
+      color: $color-base-green-light;
+    }
+    &-picture {
+      &--dark {border-color: $color-accent-white}
+      &--light {border-color: $color-accent-white !important}
+    }
+    &-link {
+      &--dark {
+        span {
+          color: $color-accent-white;
+          svg {
+            color: $color-accent-white;
+          }
+        }
+      }
+      &--light {
+        span {
+          color: $color-base-green-light;
+          svg {
+            color: $color-base-green-light;
+          }
+        }
+      }
+    }
+  }
+
+  &-player {
+    &--dark {
+      div > [role="progressbar"] {
+        background-color: $color-accent-white;
+        div {
+          background-color: $color-base-green-dark;
+        }
+      }
+    }
+    &--light {
+      div > [role="progressbar"] {
+        background-color: $color-accent-gray;
+        div {
+          background-color: $color-base-green-light;
+        }
+      }
+    }
+  }
+
+  &-timeline {
+    &--dark {
+      background-color: $color-base-green-dark;
+      border-color: $color-accent-white;
+      color: $color-accent-white;
+      .timeline-container {
+        .event, .marker {
+          &-container {
+            &__content {
+              button {
+                color: $color-accent-white !important;
+              }
+            }
+          }
+        }
+      }
+      div {
+        background-color: $color-base-green-dark;
+      }
+    }
+    &--light {
+      background-color: $color-base-green-light;
+      border-color: $color-accent-white;
+      color: $color-accent-white;
+      .timeline-container {
+        .event, .marker {
+          &-container {
+            &__content {
+              button {
+                color: $color-accent-white !important;
+              }
+            }
+          }
+        }
+      }
+      div {
+        background-color: $color-base-green-light;
+      }
+    }
+    &-marker {
+      &--dark {
+        background-color: $color-accent-white !important;
+      }
+      &--light {
+        background-color: $color-accent-white !important;
+      }
+    }
+  }
+
+  &-brands-container, &-footer {
+    &--dark {
+      background-color: $color-base-green-light;
+    }
+    &--light {
+      background-color: $color-base-yellow;
+    }
+  }
+}
+

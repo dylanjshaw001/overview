@@ -1,0 +1,47 @@
+.btn-flip{
+  line-height: 30px;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  font-size: .6rem;
+  margin: 10px;
+  
+  &:hover{
+      
+      &:after{
+          opacity: 1;
+          transform: translateY(0) rotateX(0);
+      }
+      
+      &:before{
+          opacity: 0;
+          transform: translateY(50%) rotateX(90deg);
+      }
+  }
+  
+  &:after{
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: block;
+      transition: 1s;
+      position: absolute;
+      content: attr(data-back);
+      transform: translateY(-50%) rotateX(90deg);
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+  }
+  
+  &:before{
+      top: 0;
+      left: 0;
+      display: block;
+      padding: 0 10px;
+      transition: 1s;
+      position: relative;
+      content: attr(data-front);
+      transform: translateY(0) rotateX(0);
+      border-top-style: solid;
+      border-top-width: 1px;
+  }
+}

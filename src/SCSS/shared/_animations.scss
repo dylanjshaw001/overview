@@ -1,0 +1,93 @@
+$speed-slowest: 5s;
+$speed-slower-even: 2s;
+$speed-slower: 1.5s;
+$speed-slow: 1s;
+$speed-fast: .5s;
+$speed-faster: .3s;
+$speed-fastest: .1s;
+$speed-none: 0s;
+
+
+$speed-dark-trans: $speed-none;
+
+$speed-fade-slow: $speed-slow;
+$speed-fade-fast: $speed-fast;
+
+$speed-custom-fade-trans: $speed-slow;
+$speed-custom-swipe-trans: $speed-fast;
+
+$speed-brand-trans: $speed-slow;
+$speed-logo-trans: $speed-faster;
+
+//
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+
+//
+
+.fade-in-custom {
+  &.swipe {
+    transform: translateY(20vh);
+  }
+  opacity: 0;
+  visibility: hidden;
+  transition: 
+    opacity $speed-custom-fade-trans ease-out, 
+    transform $speed-custom-swipe-trans ease-out;
+  will-change: opacity, visibility;
+  &.is-visible {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+  }
+}
+
+// 
+
+.fade-slow {
+  &-appear, &-enter {
+    opacity: 0;
+    transform: scale(.3);
+    &-active {
+      opacity: 1;
+      transform: scale(1);
+      transition: 
+        opacity $speed-fade-slow,  
+        transform $speed-fade-slow linear;
+    }
+  }
+}
+
+.fade-fast {
+  &-appear, &-enter {
+    opacity: 0;
+    transform: scale(.5);
+    &-active {
+      opacity: 1;
+      transform: scale(1);
+      transition: 
+        opacity $speed-fade-fast, 
+        transform $speed-fade-fast;
+    }
+  }
+}

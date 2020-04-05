@@ -1,0 +1,9 @@
+.footer {
+  padding: 10px;
+ .logo {
+   transition: transform $speed-logo-trans ease-in-out;
+   &:hover {
+     transform: scale(1.6);
+   }
+ } 
+}
