@@ -58,3 +58,13 @@ $breakpoint-xs: 330px;
     }
   }
 }
+
+.arrow {
+  &-navigation {
+    transform: rotate(90deg);
+    margin: 0 8px 0 2px;
+    svg {
+      font-size: 1rem;
+    }
+  }
+}

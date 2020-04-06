@@ -7,6 +7,17 @@ $vinyl-size: 120px;
     margin: 20px;
     opacity: .2;
   }
+  &-preview-caption {
+    font-size: .7rem;
+    max-width: 200px;
+    padding: 20px;
+    margin: 0 auto;
+    .logo-react {
+      max-width: 30px;
+      margin-bottom: -8px;
+      animation: spin $speed-slowest infinite linear;
+    }
+  }
   &-track {
     &-container {
       display: grid;

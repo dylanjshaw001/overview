@@ -1,5 +1,5 @@
 import React from 'react';
-import Logos from './Logos';
+import Logos from '../Logos/Logos';
 
 import { FadeIn } from '../shared/hoc/FadeIn';
 import { useDark } from '../shared/Theme/UseTheme';

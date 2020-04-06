@@ -5,7 +5,6 @@ import { CSSTransition } from 'react-transition-group';
 import { useDark, useWork } from '../shared/Theme/UseTheme';
 import { joinClasses } from '../shared/utility/utilities';
 
-import History from './History';
 import ProfileLinks from './ProfileLinks';
 import TrackPlayer from '../Player/Player';
 
@@ -48,7 +47,7 @@ const Profile = (props) => {
           in={true}
           timeout={1000}
           appear
-          classNames='fade-fast'
+          classNames='fade-slow'
         >
           <div className='centered-column'>
             <img
@@ -69,12 +68,6 @@ const Profile = (props) => {
             </div>
           </div>
         </CSSTransition>
-        <CSSTransition
-          in={true}
-          timeout={1000}
-          appear
-          classNames='fade-fast'
-        ><History /></CSSTransition>
         <TrackPlayer tracks={tracksState.tracks} loaded={tracksState.loaded} isDark={isDark} />
       </div>
     </div>

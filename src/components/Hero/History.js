@@ -1,5 +1,7 @@
 import React from 'react';
 
+import NavigationIcon from '@material-ui/icons/Navigation';
+
 import styled from 'styled-components';
 
 import bosPng from './assets/boston_b.png';
@@ -26,18 +28,13 @@ const HistoryStyles = styled.div`
 
 const History = (props) => {
 
-  const rightArrow = '\u27a1\ufe0f',
-    locs = {
-      'BOS': bosPng,
-      'SD': sdPng,
-      'SF': sfPng
-    },
+  const locs = { 'BOS': bosPng, 'SD': sdPng, 'SF': sfPng },
     locKeys = Object.keys(locs),
     locsPath = locKeys.map((loc, ind) => {
       const isLast = locKeys.length - 1 === ind,
         city = <span>{loc}</span>,
         icon = true ? <img className='icon' src={locs[loc]} alt='profile-loc-img' /> : null,
-        delimeter = true ? (isLast ? null : <span className='arrow'>{rightArrow}</span>) : (isLast ? null : <span className='pipe'>|</span>);
+        delimeter = true ? (isLast ? null : <span className='arrow-navigation'><NavigationIcon /></span>) : (isLast ? null : <span className='pipe'>|</span>);
       return <div key={loc} className='loc-container'>{city}{icon}{delimeter}</div>;
     });
 

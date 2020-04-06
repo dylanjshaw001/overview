@@ -5,10 +5,21 @@ import { useTimelineIcon } from './useTimelineIcon';
 
 function TimelineEvent(props) {
 
-  let Icon = useTimelineIcon(props.el.mileStone, 'large');
+  const Icon = useTimelineIcon({ mileStone: props.el.mileStone, id: props.el.id, type: props.el.type }, 'large');
+
+  const styles = props.direction === 'horizontal' ?
+    {
+      'gridColumnStart': props.indByType + 3,
+      'gridColumnEnd': props.indByType + 4
+    } : {
+      'gridRowStart': props.indByType + 3,
+      'gridRowEnd': props.indByType + 4,
+    };
+
+  const oddOrEven = props.indByType % 2 ? 'odd' : 'even';
 
   return (
-    <div className={`datum event event-${props.el.order}`}>
+    <div className={`datum event event-${oddOrEven}`} style={styles}>
       <div className='event-container'>
         {props.bva ?
           <div className='event-container__content'>
@@ -21,7 +32,7 @@ function TimelineEvent(props) {
           </div>
         }
       </div>
-    </div>
+    </div >
   );
 }
 
