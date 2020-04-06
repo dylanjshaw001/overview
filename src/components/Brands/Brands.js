@@ -1,6 +1,8 @@
-import React, { useState, useEffect, useRef, useImperativeHandle } from 'react';
+import React, { useState, useEffect } from 'react';
 
-import zenscroll from 'zenscroll';
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+
+import { CSSTransition } from 'react-transition-group';
 
 import { FadeIn } from '../shared/hoc/FadeIn';
 import { useDark } from '../shared/Theme/UseTheme';
@@ -8,12 +10,7 @@ import { useDark } from '../shared/Theme/UseTheme';
 import fire from '../../fire';
 
 
-function Brands(props, ref) {
-
-  const brandsRef = useRef();
-  useImperativeHandle(ref, () => ({
-    focus: () => zenscroll.to(brandsRef.current, 1000)
-  }));
+function Brands(props, brandsRef) {
 
   const [brandsState, setBrandsState] = useState({ brands: [], brandsLoaded: false });
 
@@ -31,6 +28,17 @@ function Brands(props, ref) {
 
   return (
     <div ref={brandsRef} className={`${useDark('brands-container')} brands-container`}>
+      <CSSTransition
+        in={true}
+        timeout={1000}
+        appear
+        classNames='fade-slow'
+      >
+        <div className='centered-column brands-caption'>
+          <div><span>some sites i worked on at my last job</span></div>
+          <div className='centered-column brands-caption__arrow'><KeyboardArrowUpIcon /></div>
+        </div>
+      </CSSTransition>
       <div className='brands'>
         {
           brandsState.brandsLoaded ?

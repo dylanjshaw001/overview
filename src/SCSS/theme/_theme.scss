@@ -52,18 +52,28 @@
 
   &-player {
     &--dark {
-      div > [role="progressbar"] {
-        background-color: $color-accent-white;
-        div {
-          background-color: $color-base-green-dark;
+      div {
+        background-color: $color-base-green-light;
+        color: $color-accent-white;
+        border-color: $color-accent-white;
+        & > [role="progressbar"] {
+          background-color: $color-accent-white;
+          div {
+            background-color: $color-base-green-dark;
+          }
         }
       }
     }
     &--light {
-      div > [role="progressbar"] {
-        background-color: $color-accent-gray;
-        div {
-          background-color: $color-base-green-light;
+      div {        
+        background-color: $color-base-yellow;
+        color: $color-base-green-light;
+        border-color: $color-accent-white;
+        & > [role="progressbar"] {
+          background-color: $color-accent-gray;
+          div {
+            background-color: $color-base-green-light;
+          }
         }
       }
     }
@@ -120,10 +130,12 @@
 
   &-brands-container, &-footer {
     &--dark {
-      background-color: $color-base-green-light;
+      background-color: $color-base-green-dark;
+      color: $color-accent-white;
     }
     &--light {
-      background-color: $color-base-yellow;
+      background-color: $color-base-green-light;
+      color: $color-accent-white;
     }
   }
 }

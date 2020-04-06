@@ -23,8 +23,8 @@ function TimelineEvent(props) {
       <div className='event-container'>
         {props.bva ?
           <div className='event-container__content'>
-            <Button onClick={props.scroll}>{Icon}</Button>
-            <Button onClick={props.scroll}>{props.el.content}</Button>
+            <Button onClick={props.scroll.brands}>{Icon}</Button>
+            <Button onClick={props.scroll.brands}>{props.el.content}</Button>
           </div> :
           <div className='event-container__content'>
             {Icon}

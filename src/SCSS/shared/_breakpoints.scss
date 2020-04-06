@@ -1,0 +1,9 @@
+$breakpoint-xs: 330px;
+$breakpoint-sm: 519px;
+$breakpoint-md: 768px;
+
+@mixin mq-max($width){
+  @media (max-width: $width) {
+    @content;
+  }  
+}

@@ -24,6 +24,7 @@ const ProfileLinks = (props) => {
         href="https://www.linkedin.com/in/dylan-j-shaw"
         target="_blank"
         size="small"
+        rel="noopener noreferrer"
       >
         <LinkedInIcon />
       </Button>
@@ -32,14 +33,16 @@ const ProfileLinks = (props) => {
         href="https://github.com/dylanjshaw"
         target="_blank"
         size="small"
+        rel="noopener noreferrer"
       >
         <GitHubIcon />
       </Button>
-      <Button
+      <a
         className={`${profLinkClasses} profile-link__pdf`}
         href={ResumePDF}
         target="_blank"
-      >resume.pdf</Button>
+        rel="noopener noreferrer"
+      >resume.pdf</a>
     </div>
   );
 }

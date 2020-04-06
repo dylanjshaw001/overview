@@ -1,6 +1,9 @@
 import React from 'react';
+
 import SchoolIcon from '@material-ui/icons/School';
 import WorkIcon from '@material-ui/icons/Work';
+import AlbumIcon from '@material-ui/icons/Album';
+
 import bosPng from '../Logos/assets/boston_b.png';
 import sdPng from '../Logos/assets/sd_tree.png';
 import sfPng from '../Logos/assets/sf_bridge.png';
@@ -31,6 +34,9 @@ export const useTimelineIcon = (data, size) => {
         break;
       case 'home-marker-sf':
         Icon = <img alt='marker-img' className='marker-img' src={sfPng} />
+        break;
+      case 'project-marker-music':
+        Icon = <AlbumIcon />
         break;
       default:
         Icon = null;

@@ -9,6 +9,15 @@ import { Button } from '@material-ui/core';
 function TimelineMarker(props) {
 
   const Icon = useTimelineIcon({ mileStone: props.el.mileStone, id: props.el.id, type: props.el.type }, 'large');
+  let content;
+  if (props.bva) {
+    content = <Button onClick={props.scroll.brands}><p>{props.el.dateRange}</p></Button>;
+  } else if (props.el.id.includes('music')) {
+    content = <Button onClick={props.scroll.player}><p>{Icon}</p></Button>;
+  } else {
+    content = <p>{props.el.content}<span>{Icon}</span></p>;
+  }
+
 
   return (
     <div className={joinClasses([
@@ -19,15 +28,8 @@ function TimelineMarker(props) {
     ])
     }>
       <div className='marker-container'>
-        <div className='marker-container__content'>
-          {
-            props.bva ?
-              <Button onClick={props.scroll}><p>{props.el.dateRange}</p></Button> :
-              <p>{props.el.content}<span>{Icon}</span></p>
-          }
-        </div>
+        <div className='marker-container__content'>{content}</div>
       </div>
-
     </div>
   );
 }

@@ -1,20 +1,22 @@
-$breakpoint-xs: 330px;
-
-@mixin mq-max($width){
-  @media (max-width: $width) {
-    @content;
-  }  
-}
-
 .profile {
+  height: 100vh;
   font-family: $font-main;
   font-weight: 100;
   letter-spacing: 1.5px;
   display: flex;
-  padding: 150px 0 100px 0;
-  height: auto;
   justify-content: center;
-  transition: $speed-dark-trans background-color;
+  
+  &-inner {
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    &-container {
+      margin: 20px 10px 0 10px;
+      align-items: flex-end;
+      @include mq-max($breakpoint-sm){
+        align-items: center;
+      }
+    }
+  }
 
   &-picture {
     border: 2px solid;
@@ -24,13 +26,16 @@ $breakpoint-xs: 330px;
     -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
   }
 
+  &-name, &-title {
+    font-weight: 700;
+    padding: 0 0 0 4px;
+  }
+
   &-name {
     color: $color-accent-blue;
-    width: min-content;
   }
 
   &-title {
-    padding: 0 0 0 4px;
     &__container {
       padding: 0 0 0 2px;
       border-left: 2px solid;
@@ -41,30 +46,25 @@ $breakpoint-xs: 330px;
     }
   }
 
-  &-info {
-    padding: 0 10px;
-  }
-
   &-link {
     &__container {
-      display: inline-flex;
+      justify-content: flex-start;
+      margin: 10px 0 0 0;
     }
     font-size: 1rem;
     text-transform: lowercase !important;
-    padding: 6px 0px !important;
-    min-width: 40px !important;
-    &__pdf span {
-      padding: 0 8px;
-    }
-  }
-}
-
-.arrow {
-  &-navigation {
-    transform: rotate(90deg);
-    margin: 0 8px 0 2px;
-    svg {
-      font-size: 1rem;
+    padding: 4px 0 !important;
+    min-width: 30px !important;
+    margin-right: 4px !important;
+    &__pdf {
+      color: inherit;
+      letter-spacing: 0;
+      text-decoration: none;
+      border-bottom: 1px dotted;
+      padding: 0px !important;
+      a {
+        padding: 2px 0;
+      }
     }
   }
 }
