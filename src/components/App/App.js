@@ -16,7 +16,7 @@ class App extends Component {
     super();
 
     this.state = {
-      darkTheme: true,
+      darkTheme: false,
       workMode: true,
 
     }

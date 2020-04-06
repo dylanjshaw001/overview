@@ -9,7 +9,6 @@ export const useTimelineIcon = (data, size) => {
 
   let Icon;
 
-  debugger;
   if (data.type === 'event') {
     switch (data.mileStone) {
       case 'school':
@@ -25,13 +24,16 @@ export const useTimelineIcon = (data, size) => {
   } else if (data.type === 'marker') {
     switch (data.id) {
       case 'home-marker-boston':
-        Icon = <img className='marker-img' src={bosPng} />
+        Icon = <img alt='marker-img' className='marker-img' src={bosPng} />
         break;
       case 'home-marker-sd':
-        Icon = <img className='marker-img' src={sdPng} />
+        Icon = <img alt='marker-img' className='marker-img' src={sdPng} />
         break;
       case 'home-marker-sf':
-        Icon = <img className='marker-img' src={sfPng} />
+        Icon = <img alt='marker-img' className='marker-img' src={sfPng} />
+        break;
+      default:
+        Icon = null;
         break;
     }
   }
