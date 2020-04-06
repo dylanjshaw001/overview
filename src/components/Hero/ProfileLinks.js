@@ -4,8 +4,6 @@ import { joinClasses } from '../shared/utility/utilities';
 
 import { Button } from '@material-ui/core';
 
-import ResumePDF from '../../pdf/Dylan_Shaw_resume.pdf';
-
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
@@ -39,10 +37,10 @@ const ProfileLinks = (props) => {
       </Button>
       <a
         className={`${profLinkClasses} profile-link__pdf`}
-        href={ResumePDF}
-        target="_blank"
+        href={`${process.env.PUBLIC_URL}/pdf/Dylan_Shaw_resume.pdf`}
+        download
         rel="noopener noreferrer"
-      >resume.pdf</a>
+      >download resume.pdf</a>
     </div>
   );
 }
