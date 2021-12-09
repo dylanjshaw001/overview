@@ -6,7 +6,7 @@ import AlbumIcon from '@material-ui/icons/Album';
 
 import bosPng from '../Logos/assets/boston_b.png';
 import sdPng from '../Logos/assets/sd_tree.png';
-import sfPng from '../Logos/assets/sf_bridge.png';
+import nycPng from '../Logos/assets/nyc.png';
 
 export const useTimelineIcon = (data, size) => {
 
@@ -32,8 +32,8 @@ export const useTimelineIcon = (data, size) => {
       case 'home-marker-sd':
         Icon = <img alt='marker-img' className='marker-img' src={sdPng} />
         break;
-      case 'home-marker-sf':
-        Icon = <img alt='marker-img' className='marker-img' src={sfPng} />
+      case 'home-marker-nyc': 
+        Icon = <img alt='marker-img' className='marker-img' src={nycPng} />; 
         break;
       case 'project-marker-music':
         Icon = <AlbumIcon />

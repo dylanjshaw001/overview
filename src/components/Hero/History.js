@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 import bosPng from './assets/boston_b.png';
 import sdPng from './assets/sd_tree.png';
-import sfPng from './assets/sf_bridge.png';
+import nycPng from './assets/nyc';
 
 const HistoryStyles = styled.div`
   display: flex;
@@ -27,8 +27,7 @@ const HistoryStyles = styled.div`
   `;
 
 const History = (props) => {
-
-  const locs = { 'BOS': bosPng, 'SD': sdPng, 'SF': sfPng },
+  const locs = { 'BOS': bosPng, 'SD': sdPng, 'NYC': nycPng },
     locKeys = Object.keys(locs),
     locsPath = locKeys.map((loc, ind) => {
       const isLast = locKeys.length - 1 === ind,

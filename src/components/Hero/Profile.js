@@ -42,7 +42,6 @@ const Profile = (props) => {
               <div>
                 <span className='profile-name'>dylan shaw </span>
                 <div className='profile-title__container'>
-                  <span className='profile-title'>front-end</span>
                   <span className='profile-title'>developer</span>
                 </div>
               </div>
