@@ -6,14 +6,15 @@
 
 .timeline-container {
   &--outer {
-    border-top: 2px solid;
-    border-bottom: 2px solid;
+    // border-top: 2px solid;
+    // border-bottom: 2px solid;
     padding: 150px 0;
   }
   font-family: $font-main;
   font-weight: 100;
-  display: grid; 
-  .event, .marker {
+  display: grid;
+  .event,
+  .marker {
     &-container {
       &__content button {
         text-transform: inherit;
@@ -44,7 +45,7 @@
       }
       &-odd {
         grid-row-start: 3;
-        grid-row-end: 4; 
+        grid-row-end: 4;
       }
       &-container {
         text-align: center;
@@ -52,9 +53,8 @@
         max-width: 85%;
       }
     }
-    
-    .marker {
 
+    .marker {
       grid-row-start: 2;
       grid-row-end: 3;
 
@@ -91,7 +91,7 @@
       }
       &-odd {
         grid-column-start: 3;
-        grid-column-end: 4; 
+        grid-column-end: 4;
       }
       &-container {
         text-align: center;
@@ -100,7 +100,6 @@
       }
     }
     .marker {
-
       grid-column-start: 2;
       grid-column-end: 3;
 
@@ -122,7 +121,6 @@
           }
         }
       }
-      
     }
   }
 }

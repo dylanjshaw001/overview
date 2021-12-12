@@ -2,36 +2,58 @@ $vinyl-size: 120px;
 
 .player {
   padding: 150px 0;
-  @include mq-max($breakpoint-md){
+  @include mq-max($breakpoint-md) {
     padding: 100px 0;
   }
-  border-bottom: 2px solid;
+  &-header {
+    &.melophile-page {
+      letter-spacing: 5px;
+      font-size: 24px;
+      margin: 0px;
+      border-bottom: 3px solid;
+      padding: 3px 10px 5px 15px;
+      svg {
+        margin: 0 3px -4px -2px;
+      }
+    }
+    &.home-page {
+      padding: 0 10px;
+      cursor: pointer;
+      max-width: 180px;
+      text-align: center;
+      border: 1px solid transparent;
+      border-radius: 6px;
+      text-decoration: none;
+      text-transform: none;
+      line-height: 1.2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
   &-progress {
     margin: 0 auto;
-    padding: 50px 0;
-    width: 80%;
-  }
-  [role="progressbar"] {
-    opacity: .2;
-  }
-  &-preview-caption {
-    font-size: 1rem;
-    max-width: 180px;
-    margin: 0 auto;
-    text-align: center;
-    color: inherit;
-    &__arrow {
-      transform: rotate(180deg)
+    padding: 40px 0;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: left;
+    height: 40px;
+    &--title {
+      text-align: left;
+      margin: 5px;
     }
-    .logo-react {
-      max-width: 30px;
-      margin-bottom: -8px;
-      animation: spin $speed-slowest infinite linear;
-    }
+  }
+  [role='progressbar'] {
+    opacity: 0.5;
   }
   &-track {
     &-container {
-      width: 85%;
+      width: 80%;
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fit, $vinyl-size);
@@ -41,26 +63,34 @@ $vinyl-size: 120px;
     }
     &--option {
       cursor: pointer;
-      -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
       background-size: cover;
-      transition: 
-      transform $speed-fast ease-out,
-      filter $speed-fast ease-out !important;
+      transition: transform $speed-fast ease-out, filter $speed-fast ease-out !important;
       img {
-        // border-radius: 10px;
+        border-radius: 2px;
         transition: $speed-faster linear !important;
         max-height: $vinyl-size;
       }
       filter: grayscale(1);
-      &:hover{
+      &:hover {
         filter: grayscale(0);
       }
     }
     &--selected {
-      background:    
-        linear-gradient(30deg, transparent 40%, rgba(42, 41, 40, .85) 40%) no-repeat 100% 0,
-        linear-gradient(60deg, rgba(42, 41, 40, .85) 60%, transparent 60%) no-repeat 0 100%,
-        repeating-radial-gradient(#2a2928, #2a2928 4px, #ada9a0 5px, #2a2928 6px);
+      background: linear-gradient(
+            30deg,
+            transparent 40%,
+            rgba(42, 41, 40, 0.85) 40%
+          )
+          no-repeat 100% 0,
+        linear-gradient(60deg, rgba(42, 41, 40, 0.85) 60%, transparent 60%)
+          no-repeat 0 100%,
+        repeating-radial-gradient(
+          #2a2928,
+          #2a2928 4px,
+          #ada9a0 5px,
+          #2a2928 6px
+        );
       animation: spin $speed-slowest infinite linear;
       animation-delay: $speed-faster;
       border-radius: 100px !important;
@@ -68,7 +98,7 @@ $vinyl-size: 120px;
         max-height: 50px;
         border-radius: 100px;
       }
-      &.playing{
+      &.playing {
         animation-play-state: running;
       }
       &.paused {
@@ -77,5 +107,3 @@ $vinyl-size: 120px;
     }
   }
 }
-
-

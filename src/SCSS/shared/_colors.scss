@@ -1,20 +1,28 @@
 $color-white: white;
-$color-gray: lightgray;
+$color-gray-1: darkgray;
+$color-gray-2: #5a5a5a;
 
-$koras-yellow-1: #fffdd3;
+$color-yellow-1: #ffdfdf;
 
 $color-green-1: #2d855f;
 $color-green-2: #1a4c36;
 
-$color-blue: #03396c;
+$color-blue-1: #09233c;
+$color-blue-2: #110a28;
+$color-blue-3: #5fa1dd;
+$color-blue-4: #061a2e;
 
 ////////////
 
+$color-bg-light-1: $color-yellow-1;
+$color-bg-light-2: $color-blue-3;
 
-$color-base-yellow: $koras-yellow-1;
-$color-base-green-light: $color-green-1;
-$color-base-green-dark: $color-green-2;
+$color-bg-dark-1: $color-blue-2;
+$color-bg-dark-2: $color-blue-4;
 
-$color-accent-white: $color-white;
-$color-accent-blue: $color-blue;
-$color-accent-gray: $color-gray;
+$color-nav: $color-blue-1;
+$color-profile-title: $color-blue-3;
+$color-text-light: $color-blue-2;
+$color-text-dark: $color-white;
+$color-progressbar-dark: $color-gray-2;
+$color-progressbar-light: $color-gray-1;

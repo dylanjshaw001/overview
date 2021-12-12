@@ -1,49 +1,33 @@
 /* eslint-disable no-self-assign */
 import React, { Component } from 'react';
-import fire from '../../fire';
+import {
+  Routes,
+  Route
+} from "react-router-dom";
 
-import zenscroll from 'zenscroll';
+
+import Theme from '../shared/Theme/ThemeProvider';
+import { withClass } from '../shared/hoc/withClass';
+import ScrollToTop from '../shared/utility/scrollToTop';
 
 import Nav from '../Nav/Nav';
-import Profile from '../Hero/Profile';
-import Timeline from '../Timeline/Timeline';
-import TrackPlayer from '../Player/Player';
-import Brands from '../Brands/Brands';
 import Footer from '../Footer/Footer';
 
-import { withClass } from '../shared/hoc/withClass';
-import Theme from '../shared/Theme/ThemeProvider';
-import '../../SCSS/styles.scss';
+import Home from '../Pages/Home';
+import Melophile from '../Pages/Melophile';
 
 class App extends Component {
+
   constructor() {
     super();
 
+    const now = new Date().getHours();
+    const isNight = now <= 9 || now >= 18; 
+
     this.state = {
-      darkTheme: false,
+      darkTheme: isNight,
       workMode: true,
-      tracks: [],
-      tracksLoaded: false
     }
-
-    this.brandsRef = React.createRef();
-    this.playerRef = React.createRef();
-  }
-
-  componentDidMount() {
-    var component = this;
-    fire.database().ref('music')
-      .on('value', function (snapshot) {
-        const tracks = snapshot.val();
-        component.setState({ tracks: tracks, tracksLoaded: true });
-      });
-  }
-
-  scrollToBrands = () => {
-    zenscroll.to(this.brandsRef.current, 2000);
-  }
-  scrollToPlayer = () => {
-    zenscroll.to(this.playerRef.current, 1000);
   }
 
   toggleDark = () => {
@@ -61,28 +45,20 @@ class App extends Component {
   }
 
   render() {
-
     return (
       <Theme darkTheme={this.state.darkTheme} workMode={this.state.workMode}>
-        <Nav click={{ theme: this.toggleDark, work: this.toggleWork }} />
-        <Profile />
-        <Timeline
-          scroll={{
-            brands: this.scrollToBrands,
-            player: this.scrollToPlayer
-          }}
-        />
-        {
-          this.state.tracksLoaded && (
-            <TrackPlayer
-              tracks={this.state.tracks}
-              tracksLoaded={this.state.tracksLoaded}
-              isDark={this.state.darkTheme}
-              ref={this.playerRef}
-            />
-          )
-        }
-        <Brands ref={this.brandsRef} />
+          <ScrollToTop/>
+          <Nav click={{ theme: this.toggleDark, work: this.toggleWork }}/>
+          <Routes>
+            <Route exact path="/" element={
+              <Home darkTheme={this.state.darkTheme}/>
+            }/>
+            <Route exact path="/melophile" element={
+              <Melophile
+                darkTheme={this.state.darkTheme}
+              />
+            }/>
+          </Routes>
         <Footer />
       </Theme>
     );
@@ -90,3 +66,4 @@ class App extends Component {
 }
 
 export default withClass(App, '');
+// export default App;

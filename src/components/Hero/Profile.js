@@ -55,3 +55,4 @@ const Profile = (props) => {
 }
 
 export default React.memo(Profile);
+// export default React.forwardRef(Profile);

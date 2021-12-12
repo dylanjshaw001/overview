@@ -5,43 +5,41 @@
   letter-spacing: 1.5px;
   display: flex;
   justify-content: center;
-  
+
   &-inner {
     flex-direction: row-reverse;
     align-items: flex-end;
     &-container {
       margin: 20px 10px 0 10px;
       align-items: flex-end;
-      @include mq-max($breakpoint-sm){
+      @include mq-max($breakpoint-sm) {
         align-items: center;
       }
     }
   }
 
   &-picture {
-    border: 2px solid;
+    border: 1px transparent;
     border-radius: 999px;
     height: 200px;
     width: 200px;
-    -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   }
 
-  &-name, &-title {
+  &-name,
+  &-title {
     font-weight: 700;
     padding: 0 0 0 4px;
   }
 
-  &-name {
-    color: $color-accent-blue;
-  }
-
   &-title {
+    color: $color-profile-title;
     &__container {
       padding: 0 0 0 2px;
       border-left: 2px solid;
       display: inline-block;
     }
-    @include mq-max($breakpoint-xs){
+    @include mq-max($breakpoint-xs) {
       display: block;
     }
   }

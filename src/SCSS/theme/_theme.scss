@@ -1,49 +1,42 @@
 .theme {
-
   &-nav {
     &--dark {
-      background-color: $color-base-green-dark;
-      border-color: $color-accent-white !important;
+      background-color: $color-nav;
       button {
-        color: $color-accent-white !important;
+        color: $color-text-dark !important;
       }
     }
     &--light {
-      background-color: $color-base-green-light;
-      border-color: $color-accent-white !important;
+      background-color: $color-nav;
       button {
-        color: $color-accent-white !important;
+        color: $color-text-dark !important;
       }
     }
   }
 
   &-profile {
     &--dark {
-      background-color: $color-base-green-light;
-      color: $color-accent-white;
+      background-color: $color-bg-dark-1;
+      color: $color-text-dark;
     }
     &--light {
-      background-color: $color-base-yellow;
-      color: $color-base-green-light;
-    }
-    &-picture {
-      &--dark {border-color: $color-accent-white}
-      &--light {border-color: $color-accent-white !important}
+      background-color: $color-bg-light-1;
+      color: $color-text-light;
     }
     &-link {
       &--dark {
         span {
-          color: $color-accent-white;
+          color: $color-text-dark;
           svg {
-            color: $color-accent-white;
+            color: $color-text-dark;
           }
         }
       }
       &--light {
         span {
-          color: $color-base-green-light;
+          color: $color-text-light;
           svg {
-            color: $color-base-green-light;
+            color: $color-text-light;
           }
         }
       }
@@ -51,28 +44,48 @@
   }
 
   &-player {
+    &-header {
+      &--dark {
+        &.home-page {
+          color: $color-text-dark;
+          &:active {
+            color: $color-text-dark;
+          }
+          &:hover {
+            background-color: #0d2842 !important;
+          }
+        }
+      }
+      &--light {
+        color: $color-text-light;
+        &.home-page {
+          color: $color-text-light;
+          &:hover {
+            background-color: #efd2d2 !important;
+          }
+        }
+      }
+    }
     &--dark {
       div {
-        background-color: $color-base-green-light;
-        color: $color-accent-white;
-        border-color: $color-accent-white;
-        & > [role="progressbar"] {
-          background-color: $color-accent-white;
+        background-color: $color-bg-dark-1;
+        color: $color-text-dark;
+        & > [role='progressbar'] {
+          background-color: $color-progressbar-dark;
           div {
-            background-color: $color-base-green-dark;
+            background-color: $color-text-dark;
           }
         }
       }
     }
     &--light {
-      div {        
-        background-color: $color-base-yellow;
-        color: $color-base-green-light;
-        border-color: $color-accent-white;
-        & > [role="progressbar"] {
-          background-color: $color-accent-gray;
+      div {
+        background-color: $color-bg-light-1;
+        color: $color-text-light;
+        & > [role='progressbar'] {
+          background-color: $color-progressbar-light;
           div {
-            background-color: $color-base-green-light;
+            background-color: $color-bg-dark-1;
           }
         }
       }
@@ -81,62 +94,62 @@
 
   &-timeline {
     &--dark {
-      background-color: $color-base-green-dark;
-      border-color: $color-accent-white;
-      color: $color-accent-white;
+      background-color: $color-bg-dark-2;
+      color: $color-text-dark;
       .timeline-container {
-        .event, .marker {
+        .event,
+        .marker {
           &-container {
             &__content {
               button {
-                color: $color-accent-white !important;
+                color: $color-text-dark !important;
               }
             }
           }
         }
       }
       div {
-        background-color: $color-base-green-dark;
+        background-color: $color-bg-dark-2;
       }
     }
     &--light {
-      background-color: $color-base-green-light;
-      border-color: $color-accent-white;
-      color: $color-accent-white;
+      background-color: $color-bg-light-2;
+      color: $color-text-dark;
       .timeline-container {
-        .event, .marker {
+        .event,
+        .marker {
           &-container {
             &__content {
               button {
-                color: $color-accent-white !important;
+                color: $color-text-dark !important;
               }
             }
           }
         }
       }
       div {
-        background-color: $color-base-green-light;
+        background-color: $color-bg-light-2;
       }
     }
     &-marker {
       &--dark {
-        background-color: $color-accent-white !important;
+        background-color: $color-text-dark !important;
       }
       &--light {
-        background-color: $color-accent-white !important;
+        background-color: $color-text-dark !important;
       }
     }
   }
 
-  &-brands-container, &-footer {
+  &-brands-container,
+  &-footer {
     &--dark {
-      background-color: $color-base-green-dark;
-      color: $color-accent-white;
+      background-color: $color-bg-dark-2;
+      color: $color-text-dark;
     }
     &--light {
-      background-color: $color-base-green-light;
-      color: $color-accent-white;
+      background-color: $color-bg-light-2;
+      color: $color-text-dark;
     }
   }
 }
-
