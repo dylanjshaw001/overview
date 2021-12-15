@@ -1,10 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import fire from '../../fire';
+
+// interface {
+//   tracks: Object[],
+// }
+
 
 class Musical extends Component {
 
-  constructor(){
-    super();
+  constructor(props:any){
+    super(props);
     this.state = {
       tracks: [],
       tracksLoaded: false
@@ -15,14 +20,15 @@ class Musical extends Component {
     var component = this;
     fire.database().ref('music')
       .on('value', function (snapshot) {
-        // console.log(snapshot.exportVal())
         const tracks = snapshot.val();
         console.log(tracks)
         component.setState({ tracks: tracks, tracksLoaded: true });
       });
   }
 
-  render() {return}
+  render() {
+    return <Fragment>{this.props.children}</Fragment>
+  }
 }
 
 export default Musical;

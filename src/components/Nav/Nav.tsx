@@ -11,17 +11,21 @@ import AlbumIcon from '@material-ui/icons/Album';
 
 
 import { useDark, useWork } from '../shared/Theme/UseTheme';
-
 import { joinClasses } from '../shared/utility/utilities';
 
-const Nav = (props) => {
+interface NavProps {
+  click: {
+    theme: () => void,
+    work: () => void
+  }
+}
+
+const Nav = (props: NavProps):JSX.Element => {
 
   const isWorkMode = useWork();
   const isDarkTheme = useDark(null);
-  const navClasses = joinClasses([
-    'nav',
-    useDark('nav')
-  ])
+  const navClasses = joinClasses(['nav', useDark('nav')]);
+  
   return (
     <div className={navClasses}>
       <div>

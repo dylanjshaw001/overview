@@ -4,28 +4,33 @@ import SchoolIcon from '@material-ui/icons/School';
 import WorkIcon from '@material-ui/icons/Work';
 import AlbumIcon from '@material-ui/icons/Album';
 
-import bosPng from '../Logos/assets/boston_b.png';
-import sdPng from '../Logos/assets/sd_tree.png';
-import nycPng from '../Logos/assets/nyc.png';
+import bosPng from '../shared/assets/boston_b.png';
+import sdPng from '../shared/assets/sd_tree.png';
+import nycPng from '../shared/assets/nyc.png';
 
-export const useTimelineIcon = (data, size) => {
 
-  let Icon;
+type Props = {
+  id: string,
+  type: string,
+  mileStone: 'school' | 'work',
+  size: "large" | "small" | "inherit" | "default" | "medium" | undefined
+}
 
-  if (data.type === 'event') {
-    switch (data.mileStone) {
+export const useTimelineIcon = ({id, type, mileStone, size}: Props) => {
+
+  let Icon: any;
+
+  if (type === 'event') {
+    switch (mileStone) {
       case 'school':
         Icon = <SchoolIcon fontSize={size} />;
         break;
       case 'work':
         Icon = <WorkIcon fontSize={size} />;
         break;
-      default:
-        Icon = null;
-        break;
     }
-  } else if (data.type === 'marker') {
-    switch (data.id) {
+  } else if (type === 'marker') {
+    switch (id) {
       case 'home-marker-boston':
         Icon = <img alt='marker-img' className='marker-img' src={bosPng} />
         break;

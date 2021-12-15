@@ -10,7 +10,9 @@ import { useDark } from '../shared/Theme/UseTheme';
 import fire from '../../fire';
 
 
-function Brands(props, brandsRef) {
+type BrandsProps = {}
+
+export default React.forwardRef((_, brandsRef: any) => {
 
   const [brandsState, setBrandsState] = useState({ brands: [], brandsLoaded: false });
 
@@ -42,17 +44,17 @@ function Brands(props, brandsRef) {
       <div className='brands'>
         {
           brandsState.brandsLoaded ?
-            brandsState.brands.map((brand, ind) => {
+            brandsState.brands.map(({href, flex, backgroundSrc, title}, ind) => {
               return (
                 <FadeIn key={ind} swipe={true}>
                   <a
-                    href={brand.href}
+                    href={href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className='brands__tile'
                   >
-                    <div className={`${brand.flex} brands__tile-content`} style={{ backgroundImage: `url(${brand.backgroundSrc})` }}>
-                      <p className="brands__tile-title">{brand.title}</p>
+                    <div className={`${flex} brands__tile-content`} style={{ backgroundImage: `url(${backgroundSrc})` }}>
+                      <p className="brands__tile-title">{title}</p>
                     </div>
                   </a>
                 </FadeIn>
@@ -63,6 +65,4 @@ function Brands(props, brandsRef) {
       </div>
     </div>
   );
-}
-
-export default React.forwardRef(Brands);
+})

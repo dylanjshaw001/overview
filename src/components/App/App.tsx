@@ -16,10 +16,17 @@ import Footer from '../Footer/Footer';
 import Home from '../Pages/Home';
 import Melophile from '../Pages/Melophile';
 
-class App extends Component {
 
-  constructor() {
-    super();
+interface AppProps {}
+interface AppState {
+  darkTheme: boolean,
+  workMode: boolean
+}
+
+class App extends Component<AppProps,AppState>{
+
+  constructor(props:AppProps) {
+    super(props);
 
     const now = new Date().getHours();
     const isNight = now <= 9 || now >= 18; 
@@ -30,14 +37,15 @@ class App extends Component {
     }
   }
 
-  toggleDark = () => {
+
+  private toggleDark = ():void => {
     let { darkTheme } = this.state;
     this.setState({
       darkTheme: !darkTheme
     });
   }
 
-  toggleWork = () => {
+  private toggleWork = ():void => {
     let { workMode } = this.state;
     this.setState({
       workMode: !workMode
@@ -46,17 +54,15 @@ class App extends Component {
 
   render() {
     return (
-      <Theme darkTheme={this.state.darkTheme} workMode={this.state.workMode}>
+      <Theme {...this.state}>
           <ScrollToTop/>
           <Nav click={{ theme: this.toggleDark, work: this.toggleWork }}/>
           <Routes>
-            <Route exact path="/" element={
+            <Route path="/" element={
               <Home darkTheme={this.state.darkTheme}/>
             }/>
-            <Route exact path="/melophile" element={
-              <Melophile
-                darkTheme={this.state.darkTheme}
-              />
+            <Route path="/melophile" element={
+              <Melophile darkTheme={this.state.darkTheme}/>
             }/>
           </Routes>
         <Footer />

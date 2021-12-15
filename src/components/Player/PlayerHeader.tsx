@@ -5,7 +5,7 @@ import AlbumIcon from '@material-ui/icons/Album';
 import { useDark } from '../shared/Theme/UseTheme';
 import { joinClasses } from '../shared/utility/utilities';
 
-function PlayerHeader(props) {
+export default function PlayerHeader():JSX.Element {
 
   const location = useLocation();
   const headerClasses = joinClasses([
@@ -22,7 +22,7 @@ function PlayerHeader(props) {
             <span>mel</span>
             <AlbumIcon />
             <span>phile</span>
-          </p>  
+          </p>    
         </React.Fragment> :
         <Link to="/melophile" className={`${headerClasses} home-page`}>
             <p>music streaming app I've been working on</p>
@@ -32,5 +32,3 @@ function PlayerHeader(props) {
     </div>
   );
 }
-
-export default PlayerHeader;

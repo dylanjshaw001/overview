@@ -1,18 +1,22 @@
 import React from 'react';
-import TrackPlayer from '../Player/Player';
-import Musical from '../Pages/Musical';
+import {Player} from '../Player/Player';
+import Musical from './Musical';
 
 class Melophile extends Musical {
+
+    state = this.state;
+    props = this.props;
+
+
   render() {
     return (
       <React.Fragment>
         {
           this.state.tracksLoaded && (
-            <TrackPlayer
+            <Player
               tracks={this.state.tracks}
               tracksLoaded={this.state.tracksLoaded}
               isDark={this.props.darkTheme}
-              ref={this.playerRef}
             />
           )
         }

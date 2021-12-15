@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import ThemeContext from './theme-context';
 
-export const useDark = (target) => {
+export const useDark = (target: string | null): string | boolean => {
   let darkTheme = useContext(ThemeContext).darkTheme;
   return (
     target ?
@@ -11,4 +11,4 @@ export const useDark = (target) => {
   );
 }
 
-export const useWork = (props) => useContext(ThemeContext).workMode;
+export const useWork = ():boolean => useContext(ThemeContext).workMode;
