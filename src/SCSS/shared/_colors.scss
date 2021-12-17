@@ -1,26 +1,43 @@
 $color-white: white;
+
 $color-gray-1: darkgray;
 $color-gray-2: #5a5a5a;
 
+$color-teal-1: teal;
+$color-teal-2: #026464;
+
+$color-turquoise-1: turquoise;
+
 $color-yellow-1: #ffdfdf;
+$color-cream-1: #fffef2;
 
 $color-green-1: #2d855f;
 $color-green-2: #1a4c36;
+$color-green-3: #dfffe0;
+$color-green-4: #6ee4b8;
+$color-green-5: #94ddbd;
+$color-green-6: #36eb9b;
 
 $color-blue-1: #09233c;
 $color-blue-2: #110a28;
 $color-blue-3: #5fa1dd;
 $color-blue-4: #061a2e;
+$color-blue-5: #dfefff;
+$color-blue-6: #a3bde3;
+$color-blue-7: #486f93;
+$color-blue-8: #25639f;
 
-////////////
-
-$color-bg-light-1: $color-yellow-1;
-$color-bg-light-2: $color-blue-3;
+////////////////////////////////
+$color-bg-light-1: $color-white;
+$color-bg-light-2: $color-green-5;
 
 $color-bg-dark-1: $color-blue-2;
-$color-bg-dark-2: $color-blue-4;
+$color-bg-dark-2: $color-blue-1;
 
-$color-nav: $color-blue-1;
+$color-nav-dark: transparent;
+$color-nav-light: transparent;
+$color-nav-text-dark: $color-green-1;
+$color-nav-text-light: $color-green-1;
 $color-profile-title: $color-blue-3;
 $color-text-light: $color-blue-2;
 $color-text-dark: $color-white;

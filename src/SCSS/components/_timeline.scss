@@ -8,7 +8,7 @@
   &--outer {
     // border-top: 2px solid;
     // border-bottom: 2px solid;
-    padding: 150px 0;
+    padding: 150px 0px;
   }
   font-family: $font-main;
   font-weight: 100;
@@ -34,6 +34,7 @@
     }
   }
   &--horizontal {
+    margin-right: 30px;
     // grid-template-columns: repeat(4, minmax(1fr, 200px));
     // grid-template-columns: repeat(auto-fill, minmax(1fr, 200px));
     grid-template-columns: 10ch 10ch 1fr 1fr 1fr 1fr 10ch;

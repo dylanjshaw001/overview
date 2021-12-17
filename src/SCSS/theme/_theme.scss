@@ -1,15 +1,15 @@
 .theme {
   &-nav {
     &--dark {
-      background-color: $color-nav;
+      background-color: $color-nav-dark;
       button {
-        color: $color-text-dark !important;
+        color: $color-nav-text-dark !important;
       }
     }
     &--light {
-      background-color: $color-nav;
+      background-color: $color-nav-light;
       button {
-        color: $color-text-dark !important;
+        color: $color-nav-text-light !important;
       }
     }
   }
@@ -42,56 +42,6 @@
       }
     }
   }
-
-  &-player {
-    &-header {
-      &--dark {
-        &.home-page {
-          color: $color-text-dark;
-          &:active {
-            color: $color-text-dark;
-          }
-          &:hover {
-            background-color: #0d2842 !important;
-          }
-        }
-      }
-      &--light {
-        color: $color-text-light;
-        &.home-page {
-          color: $color-text-light;
-          &:hover {
-            background-color: #efd2d2 !important;
-          }
-        }
-      }
-    }
-    &--dark {
-      div {
-        background-color: $color-bg-dark-1;
-        color: $color-text-dark;
-        & > [role='progressbar'] {
-          background-color: $color-progressbar-dark;
-          div {
-            background-color: $color-text-dark;
-          }
-        }
-      }
-    }
-    &--light {
-      div {
-        background-color: $color-bg-light-1;
-        color: $color-text-light;
-        & > [role='progressbar'] {
-          background-color: $color-progressbar-light;
-          div {
-            background-color: $color-bg-dark-1;
-          }
-        }
-      }
-    }
-  }
-
   &-timeline {
     &--dark {
       background-color: $color-bg-dark-2;
@@ -114,14 +64,14 @@
     }
     &--light {
       background-color: $color-bg-light-2;
-      color: $color-text-dark;
+      color: $color-text-light;
       .timeline-container {
         .event,
         .marker {
           &-container {
             &__content {
               button {
-                color: $color-text-dark !important;
+                color: $color-text-light !important;
               }
             }
           }
@@ -136,11 +86,77 @@
         background-color: $color-text-dark !important;
       }
       &--light {
-        background-color: $color-text-dark !important;
+        background-color: $color-text-light !important;
       }
     }
   }
+  &-player {
+    &-header {
+      &--dark {
+        &.melophile-page {
+          // color: $color-blue-3;
+          color: $color-green-5;
+        }
+        &.home-page {
+          color: $color-text-dark;
+          &:active {
+            color: $color-text-dark;
+          }
+          &:hover {
+            background-color: #0d2842 !important;
+          }
+        }
+      }
+      &--light {
+        color: $color-text-light;
+        &.home-page {
+          color: $color-text-light;
+          &:hover {
+            background-color: #f3efef !important;
+          }
+        }
+      }
+    }
+    &--dark {
+      .player > .player-track-container > .player-track--option {
+        filter: grayscale(1);
+        &:hover {
+          filter: grayscale(0);
+        }
+      }
 
+      div {
+        background-color: $color-bg-dark-1;
+        color: $color-text-dark;
+        & > [role='progressbar'] {
+          background-color: $color-progressbar-dark;
+          div {
+            background-color: $color-green-5;
+          }
+        }
+      }
+    }
+    &--light {
+      .player > .player-track-container > .player-track--option {
+        filter: grayscale(0);
+        &:hover {
+          filter: grayscale(1);
+        }
+      }
+
+      div {
+        background-color: $color-bg-light-1;
+        color: $color-text-light;
+        & > [role='progressbar'] {
+          background-color: $color-progressbar-light;
+          div {
+            background-color: $color-bg-dark-1;
+          }
+        }
+      }
+    }
+  }
+  &-yt-converter,
   &-brands-container,
   &-footer {
     &--dark {
@@ -149,7 +165,7 @@
     }
     &--light {
       background-color: $color-bg-light-2;
-      color: $color-text-dark;
+      color: $color-text-light;
     }
   }
 }

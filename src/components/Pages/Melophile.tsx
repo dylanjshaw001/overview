@@ -1,6 +1,7 @@
 import React from 'react';
 import {Player} from '../Player/Player';
 import Musical from './Musical';
+// import Converter from '../Converter/Converter';
 
 class Melophile extends Musical {
 
@@ -20,6 +21,7 @@ class Melophile extends Musical {
             />
           )
         }
+        {/* <Converter /> */}
       </React.Fragment>
     );
   }

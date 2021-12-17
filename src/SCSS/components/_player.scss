@@ -1,16 +1,16 @@
 $vinyl-size: 120px;
 
 .player {
-  padding: 150px 0;
+  padding: 120px 0;
   @include mq-max($breakpoint-md) {
     padding: 100px 0;
   }
   &-header {
     &.melophile-page {
       letter-spacing: 5px;
-      font-size: 24px;
+      font-size: 20px;
       margin: 0px;
-      border-bottom: 3px solid;
+      // border-bottom: 3px solid;
       padding: 3px 10px 5px 15px;
       svg {
         margin: 0 3px -4px -2px;
@@ -70,10 +70,6 @@ $vinyl-size: 120px;
         border-radius: 2px;
         transition: $speed-faster linear !important;
         max-height: $vinyl-size;
-      }
-      filter: grayscale(1);
-      &:hover {
-        filter: grayscale(0);
       }
     }
     &--selected {

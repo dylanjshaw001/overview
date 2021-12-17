@@ -1,11 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import fire from '../../fire';
 
-// interface {
-//   tracks: Object[],
-// }
-
-
 class Musical extends Component {
 
   constructor(props:any){
@@ -16,14 +11,17 @@ class Musical extends Component {
     }
   }
 
+  upDateTracks (this: Component, snapshot: any) {
+    const tracks = snapshot.val();
+    this.setState({ tracks, tracksLoaded: true });
+  }
+
+
   componentDidMount() {
-    var component = this;
-    fire.database().ref('music')
-      .on('value', function (snapshot) {
-        const tracks = snapshot.val();
-        console.log(tracks)
-        component.setState({ tracks: tracks, tracksLoaded: true });
-      });
+    fire
+      .database()
+      .ref('music')
+      .on('value', this.upDateTracks.bind(this));
   }
 
   render() {

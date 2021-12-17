@@ -28,7 +28,17 @@ const Nav = (props: NavProps):JSX.Element => {
   
   return (
     <div className={navClasses}>
-      <div>
+      <div className={'nav-side'}>
+        <Link to="/">
+          <IconButton>
+            <HomeIcon/>
+          </IconButton>
+        </Link>
+        <Link to="/melophile">
+          <IconButton>
+            <AlbumIcon/>
+          </IconButton>
+        </Link>
         <IconButton
           size="medium"
           className='nav-toggle nav-toggle--theme'
@@ -39,7 +49,7 @@ const Nav = (props: NavProps):JSX.Element => {
               <MoonIcon />
           }
         </IconButton>
-        <IconButton
+        {/* <IconButton
           size="medium"
           className='nav-toggle nav-toggle--me'
           onClick={props.click.work}
@@ -49,19 +59,7 @@ const Nav = (props: NavProps):JSX.Element => {
             src={isWorkMode ? seriousMe : funMe}
             alt="avatar"
           />
-        </IconButton>
-      </div>
-      <div>
-        <Link to="/melophile">
-          <IconButton>
-            <AlbumIcon/>
-          </IconButton>
-        </Link>
-        <Link to="/">
-          <IconButton>
-            <HomeIcon/>
-          </IconButton>
-        </Link>
+        </IconButton> */}
       </div>
     </div>
   );

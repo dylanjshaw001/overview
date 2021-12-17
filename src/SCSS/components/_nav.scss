@@ -1,12 +1,17 @@
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   position: fixed;
   right: 0;
   left: 0;
-  z-index: 1;
-  // border-bottom: 2px solid;
+  margin-top: 200px;
+  // z-index: 1;
+
+  &-side {
+    display: flex;
+    flex-direction: column;
+  }
 
   &-toggle {
     padding: 8px !important;

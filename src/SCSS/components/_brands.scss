@@ -1,6 +1,6 @@
 .brands {
   &-container {
-    padding: 100px 35px;
+    padding: 100px 50px 100px 10px;
   }
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -19,12 +19,11 @@
     color: inherit;
     padding: 0 0 50px 0;
     &__arrow {
-      transform: rotate(180deg)
+      transform: rotate(180deg);
     }
   }
-  
-  &__tile {
 
+  &__tile {
     &-title {
       text-transform: lowercase;
       margin: 0;
@@ -44,9 +43,8 @@
       width: 100%;
       height: 100%;
       border-radius: 4px;
-      transition: 
-        $speed-brand-trans filter ease-out; 
-        // $speed-brand-trans transform ease-out;
+      transition: $speed-brand-trans filter ease-out;
+      // $speed-brand-trans transform ease-out;
       filter: grayscale(1);
       &:hover {
         filter: grayscale(0);
