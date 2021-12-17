@@ -6,7 +6,7 @@ import AlbumIcon from '@material-ui/icons/Album';
 
 import bosPng from '../shared/assets/boston_b.png';
 import sdPng from '../shared/assets/sd_tree.png';
-import nycPng from '../shared/assets/nyc.png';
+import nycPng from '../shared/assets/nyc-apple.png';
 
 
 type Props = {
