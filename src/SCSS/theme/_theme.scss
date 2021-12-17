@@ -156,6 +156,22 @@
       }
     }
   }
+
+  &-brands-container {
+    &--dark > .brands .brands__tile-content {
+      filter: grayscale(1);
+      &:hover {
+        filter: grayscale(0);
+      }
+    }
+    &--light > .brands .brands__tile-content {
+      filter: grayscale(0);
+      &:hover {
+        filter: grayscale(1);
+      }
+    }
+  }
+
   &-yt-converter,
   &-brands-container,
   &-footer {

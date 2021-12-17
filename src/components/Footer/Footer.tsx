@@ -18,10 +18,15 @@ const LogoDiv = styled.div`
   .logo {
     flex: 1;
     margin: 5px;
-  }
-  .logo-react {
     max-height: 35px;
     max-width: 35px;
+  }
+  .logo-react {
+    background: black;
+    border: 1px solid lightblue;
+    border-radius: 100%;
+  }
+  .logo-ts {
   }
   .logo-fire, .logo-sass, .logo-mui {
     max-height: 25px;

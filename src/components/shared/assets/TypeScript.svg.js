@@ -1,11 +1,11 @@
 import React from 'react';
 
 export default () => {
-  return (<svg version="1.0" xmlns="http://www.w3.org/2000/svg" className="logo logo-react"
+  return (<svg version="1.0" xmlns="http://www.w3.org/2000/svg" className="logo logo-ts"
   width="25" height="25" 
   viewBox="0 0 225.000000 225.000000"
   preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,225.000000) scale(0.100000,-0.100000)"
- fill="#000000" stroke="none"><path d="M161 2238 c-65 -14 -135 -88 -150 -157 -16 -73 -16 -1839 0 -1912 16
+ fill="#3074c0" stroke="none"><path d="M161 2238 c-65 -14 -135 -88 -150 -157 -16 -73 -16 -1839 0 -1912 16
  -74 84 -142 158 -158 73 -16 1839 -16 1912 0 74 16 142 84 158 158 16 73 16
  1839 0 1912 -16 74 -84 142 -158 158 -67 14 -1855 14 -1920 -1z m1809 -1050
  l45 -14 3 -107 3 -108 -23 14 c-80 50 -250 68 -319 34 -34 -17 -59 -51 -59

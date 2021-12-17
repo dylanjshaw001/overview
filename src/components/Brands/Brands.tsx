@@ -37,7 +37,7 @@ export default React.forwardRef((_, brandsRef: any) => {
         classNames='fade-slow'
       >
         <div className='centered-column brands-caption'>
-          <div><span>some sites i worked on at my last job</span></div>
+          <div><span>some sites i've worked on</span></div>
           <div className='centered-column brands-caption__arrow'><KeyboardArrowUpIcon /></div>
         </div>
       </CSSTransition>

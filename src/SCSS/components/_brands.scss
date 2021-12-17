@@ -1,6 +1,6 @@
 .brands {
   &-container {
-    padding: 100px 50px 100px 10px;
+    padding: 100px 50px 100px 50px;
   }
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -13,7 +13,7 @@
 
   &-caption {
     font-size: 1rem;
-    max-width: 180px;
+    max-width: 190px;
     margin: 0 auto;
     text-align: center;
     color: inherit;
@@ -44,12 +44,6 @@
       height: 100%;
       border-radius: 4px;
       transition: $speed-brand-trans filter ease-out;
-      // $speed-brand-trans transform ease-out;
-      filter: grayscale(1);
-      &:hover {
-        filter: grayscale(0);
-        // transform: scale(1.1);
-      }
     }
   }
 }
