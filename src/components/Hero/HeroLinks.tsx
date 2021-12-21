@@ -3,8 +3,6 @@ import { useDark } from '../shared/Theme/UseTheme';
 import { joinClasses } from '../shared/utility/utilities';
 
 import { Button } from '@material-ui/core';
-
-import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const ProfileLinks = () => {
@@ -20,19 +18,12 @@ const ProfileLinks = () => {
         size="small"
         rel="noopener noreferrer"
       ><LinkedInIcon /></Button>
-      <Button
-        className={classes}
-        href="https://github.com/dylanjshaw"
-        target="_blank"
-        size="small"
-        rel="noopener noreferrer"
-      ><GitHubIcon /></Button>
       <a
         className={`${classes} profile-link__pdf`}
-        href={`${process.env.PUBLIC_URL}/pdf/Dylan_Shaw_resume.pdf`}
+        href={`${process.env.PUBLIC_URL}/pdf/Dylan_Shaw_resume.PDF`}
         download
         rel="noopener noreferrer"
-      >download resume.pdf</a>
+      >download resume</a>
     </div>
   );
 }
