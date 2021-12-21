@@ -7,7 +7,7 @@ import { joinClasses } from '../shared/utility/utilities';
 import HeroLinks from './HeroLinks';
 
 import faceImg from './assets/face_professional.jpeg';
-import faceImgHover from './assets/face_hover.jpeg';
+import faceImgHover from './assets/face_hover.jpeg'; 
 
 
 
