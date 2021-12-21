@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CSSTransition } from 'react-transition-group';
+// import { CSSTransition } from 'react-transition-group';
 import fire from '../../fire';
 
 import TimelineEvent from './TimelineEvent';
@@ -9,6 +9,7 @@ import * as T from './types';
 import { useDark } from '../shared/Theme/UseTheme';
 import { joinClasses } from '../shared/utility/utilities';
 import { useWindowSize } from '../shared/utility/useWindowSize';
+import { FadeIn } from '../shared/utility/Transitions';
 
 
 type TimelineProps = {
@@ -49,13 +50,7 @@ export default function Timeline({scroll}: TimelineProps) {
 
   const printEvents = (e: T.EventOrMarker, ind: number):JSX.Element => {
     return (
-      <CSSTransition
-        in={eventsState.loaded}
-        timeout={1000}
-        appear
-        classNames='fade-slow'
-        key={ind}
-        >
+      <FadeIn loaded={eventsState.loaded} key={ind}>
           {
             e.type === 'event' ?
               <TimelineEvent
@@ -71,7 +66,7 @@ export default function Timeline({scroll}: TimelineProps) {
                 scroll={scroll}
               />
           }
-        </CSSTransition>
+      </FadeIn>
     );
   }
 

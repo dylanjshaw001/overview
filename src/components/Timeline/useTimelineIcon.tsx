@@ -13,7 +13,7 @@ type Props = {
   id: string,
   type: string,
   mileStone: 'school' | 'work',
-  size: "large" | "small" | "inherit" | "default" | "medium" | undefined
+  size: "large" | "small" | "inherit" | "default" | undefined
 }
 
 export const useTimelineIcon = ({id, type, mileStone, size}: Props) => {

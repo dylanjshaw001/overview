@@ -28,17 +28,13 @@ class Home extends Musical {
       <Fragment>
         <Hero />
         <Timeline scroll={{brands: this.scrollToBrands, player: this.scrollToPlayer}}/>
-        {
-          this.state.tracksLoaded && (
-            <Player
-              tracks={this.state.tracks}
-              tracksLoaded={this.state.tracksLoaded}
-              isDark={this.props.darkTheme}
-              refAccess={this.playerRef}
-            />
-          )
-        }
         <Brands ref={this.brandsRef} />
+        <Player
+          tracks={this.state.tracks}
+          tracksLoaded={this.state.tracksLoaded}
+          isDark={this.props.darkTheme}
+          refAccess={this.playerRef}
+        />
       </Fragment>
     );
   }

@@ -12,15 +12,11 @@ class Melophile extends Musical {
   render() {
     return (
       <React.Fragment>
-        {
-          this.state.tracksLoaded && (
-            <Player
-              tracks={this.state.tracks}
-              tracksLoaded={this.state.tracksLoaded}
-              isDark={this.props.darkTheme}
-            />
-          )
-        }
+        <Player
+          tracks={this.state.tracks}
+          tracksLoaded={this.state.tracksLoaded}
+          isDark={this.props.darkTheme}
+        />
         {/* <Converter /> */}
       </React.Fragment>
     );

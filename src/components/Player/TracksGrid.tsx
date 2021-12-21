@@ -1,7 +1,7 @@
 import React from 'react';
-import { CSSTransition } from 'react-transition-group';
 import { Click } from './types';
 import { joinClasses } from '../shared/utility/utilities';
+import {FadeIn} from '../shared/utility/Transitions';
 
 
 interface Track {
@@ -35,7 +35,7 @@ export default function TracksGrid({
         modifiedClasses = joinClasses([...classes, selectedTrack === track.title ? `player-track--selected ${playerState === 'play' ? 'playing' : 'paused'}` : '']);
 
         return (
-          <CSSTransition in={tracksLoaded} timeout={500} appear classNames='fade-fast' key={track.title}>
+          <FadeIn loaded={tracksLoaded} key={track.title} >
             <div
               className={modifiedClasses}
               style={styles}
@@ -43,7 +43,7 @@ export default function TracksGrid({
             >
               <img alt='album-cover' src={track.cover} />
             </div>
-          </CSSTransition>
+          </FadeIn>
         );
       })
   return <div className='player-track-container'>{trackElements}</div>;

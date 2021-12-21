@@ -110,27 +110,24 @@ export class Player extends Component<T.PlayerProps>{
   render() {
     return (
       <div className={`theme-player--${this.props.isDark ? 'dark' : 'light'}`}>
-        <div 
-          ref={this.props.refAccess} 
-          className='player'>
-            <div className='centered-column player-preview-caption'>
-              <PlayerHeader />
-            </div>
-
+        <div ref={this.props.refAccess} className='player'>
+          <div className='centered-column player-preview-caption'>
+            <PlayerHeader />
+          </div>
           <TrackContainer 
             selectedTrack={this.state.selectedTrack}
             timeElapsed={this.normalize(this.state.timeElapsed)}
           />
-
-          <TracksGrid 
-            tracks={this.props.tracks}
-            selectedTrack={this.state.selectedTrack}
-            dropShadow={this.dropShadow}
-            playerState={this.state.playerState}
-            tracksLoaded={this.props.tracksLoaded}
-            handleTrackClick={this.handleTrackClick}
-          />
-
+          {this.props.tracksLoaded && (
+              <TracksGrid 
+                tracks={this.props.tracks}
+                selectedTrack={this.state.selectedTrack}
+                dropShadow={this.dropShadow}
+                playerState={this.state.playerState}
+                tracksLoaded={this.props.tracksLoaded}
+                handleTrackClick={this.handleTrackClick}
+              />
+            )}
           <audio ref={this.player} />
         </div>
       </div>
