@@ -12,4 +12,9 @@
 @import 'components/converter';
 @import 'components/timeline';
 @import 'components/brands';
+@import 'components/products';
 @import 'components/footer';
+
+html, body, #root, #root > div {
+    height: 100%;
+}

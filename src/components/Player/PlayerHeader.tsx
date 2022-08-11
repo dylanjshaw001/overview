@@ -25,7 +25,7 @@ export default function PlayerHeader():JSX.Element {
           </p>    
         </React.Fragment> :
         <Link to="/melophile" className={`${headerClasses} home-page`}>
-            <p>music streaming app I've been working on</p>
+            <p>fun music player i made</p>
             <KeyboardArrowUpIcon />
         </Link>
       }

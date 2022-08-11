@@ -4,7 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 
 type FadeInProps = {
     loaded?: boolean,
-    key?: number | string
+    title?: number | string
 }
 
 export function FadeIn(props: PropsWithChildren<FadeInProps>) {
@@ -14,7 +14,7 @@ export function FadeIn(props: PropsWithChildren<FadeInProps>) {
         timeout={1000}
         appear
         classNames='fade-slow'
-        key={props.key}
+        key={props.title}
         >{props.children}</CSSTransition>
     )
 }

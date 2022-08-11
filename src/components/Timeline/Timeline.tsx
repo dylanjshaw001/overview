@@ -29,6 +29,7 @@ export default function Timeline({scroll}: TimelineProps) {
 
   const indByType = (event: T.EventOrMarker) => eventsState.events.filter(el => el.type === event.type).findIndex(el => el.id === event.id);
   const isBVA = (e: T.EventOrMarker):boolean => e.id.includes('bva');
+  const isDBC = (e: T.EventOrMarker):boolean => e.id.includes('dbc');
   
 
   useEffect(():void => {
@@ -56,6 +57,7 @@ export default function Timeline({scroll}: TimelineProps) {
               <TimelineEvent
                 e={e}
                 bva={isBVA(e)}
+                dbc={isDBC(e)}
                 indByType={indByType(e)}
                 direction={direction}
                 scroll={scroll}
@@ -63,6 +65,7 @@ export default function Timeline({scroll}: TimelineProps) {
               <TimelineMarker
                 e={e}
                 bva={isBVA(e)}
+                dbc={isDBC(e)}
                 scroll={scroll}
               />
           }

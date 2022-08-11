@@ -24,7 +24,7 @@ const Title = () => (
   <div>
     <span className='profile-name'>dylan shaw </span>
     <div className='profile-title__container'>
-      <span className='profile-title'>developer</span>
+      <span className='profile-title'>technical consultant</span>
     </div>
   </div>
 );

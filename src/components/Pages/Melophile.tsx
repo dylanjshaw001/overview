@@ -1,7 +1,6 @@
 import React from 'react';
 import {Player} from '../Player/Player';
 import Musical from './Musical';
-// import Converter from '../Converter/Converter';
 
 class Melophile extends Musical {
 
@@ -11,14 +10,11 @@ class Melophile extends Musical {
 
   render() {
     return (
-      <React.Fragment>
         <Player
           tracks={this.state.tracks}
           tracksLoaded={this.state.tracksLoaded}
           isDark={this.props.darkTheme}
         />
-        {/* <Converter /> */}
-      </React.Fragment>
     );
   }
 }
