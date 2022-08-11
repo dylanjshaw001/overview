@@ -35,7 +35,7 @@ export default function TracksGrid({
         modifiedClasses = joinClasses([...classes, selectedTrack === track.title ? `player-track--selected ${playerState === 'play' ? 'playing' : 'paused'}` : '']);
 
         return (
-          <FadeIn loaded={tracksLoaded} key={track.title} >
+          <FadeIn loaded={tracksLoaded} key={track.cover} title={track.title}>
             <div
               className={modifiedClasses}
               style={styles}

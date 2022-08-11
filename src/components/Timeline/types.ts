@@ -19,6 +19,7 @@ export type EventOrMarker = Event | Marker;
 export type TimelineMarker = {
   e: Marker, 
   bva: boolean,
+  dbc: boolean,
   scroll: {
     brands: ()=>void,
     player: ()=>void
@@ -30,6 +31,7 @@ export type TimelineEvent = {
   e: Event,
   indByType: number,
   bva: boolean,
+  dbc: boolean,
   scroll: {
     brands: ()=>void,
     player: ()=>void

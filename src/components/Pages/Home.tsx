@@ -4,6 +4,7 @@ import Hero from '../Hero/Hero';
 import Timeline from '../Timeline/Timeline';
 import {Player} from '../Player/Player';
 import Brands from '../Brands/Brands';
+import Products from '../Products/Products';
 import '../../SCSS/styles.scss';
 import Musical from './Musical';
 
@@ -11,6 +12,7 @@ import Musical from './Musical';
 class Home extends Musical {
 
     brandsRef = createRef();
+    productsRef = createRef();
     playerRef = createRef();
     topRef = createRef();
     
@@ -28,6 +30,7 @@ class Home extends Musical {
       <Fragment>
         <Hero />
         <Timeline scroll={{brands: this.scrollToBrands, player: this.scrollToPlayer}}/>
+        <Products ref={this.productsRef} />
         <Brands ref={this.brandsRef} />
         <Player
           tracks={this.state.tracks}

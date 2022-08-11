@@ -10,6 +10,7 @@ function TimelineEvent({
   e,
   indByType,
   bva,
+  dbc,
   scroll,
 }:T.TimelineEvent) {
 
@@ -38,20 +39,31 @@ function TimelineEvent({
 
   const oddOrEven = indByType % 2 ? 'odd' : 'even';
 
+  let evtContent;
+
+  if (bva) {
+    evtContent = 
+    <div className='event-container__content'>
+      <Button onClick={scroll.brands}>{Icon}</Button>
+      <Button onClick={scroll.brands}>{content}</Button>
+    </div>
+  } else if (dbc) {
+    evtContent = 
+    <div className='event-container__content'>
+      <a style={{'textDecoration': 'none'}} href="https://en.wikipedia.org/wiki/Dev_Bootcamp" target="_blank"><Button>{Icon}</Button></a>
+      <a style={{'textDecoration': 'none'}} href="https://en.wikipedia.org/wiki/Dev_Bootcamp" target="_blank"><Button>{content}</Button></a>
+    </div>
+  } else {
+    evtContent = 
+    <div className='event-container__content'>
+      {Icon}
+      <p>{content}</p>
+    </div>
+  }
+
   return (
     <div className={`datum event event-${oddOrEven}`} style={styles}>
-      <div className='event-container'>
-        {bva ?
-          <div className='event-container__content'>
-            <Button onClick={scroll.brands}>{Icon}</Button>
-            <Button onClick={scroll.brands}>{content}</Button>
-          </div> :
-          <div className='event-container__content'>
-            {Icon}
-            <p>{content}</p>
-          </div>
-        }
-      </div>
+      <div className='event-container'>{evtContent}</div>
     </div >
   );
 }

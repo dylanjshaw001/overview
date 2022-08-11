@@ -32,7 +32,7 @@ export default React.forwardRef((_, brandsRef: any) => {
           {
             brandsState.brands.map(({href, flex, backgroundSrc, title}, ind) => {
               return (
-                <FadeIn loaded={brandsState.brandsLoaded}>
+                <FadeIn loaded={brandsState.brandsLoaded} key={ind}>
                   <a href={href} target="_blank" rel="noopener noreferrer" className='brands__tile'>
                       <div className={`${flex} brands__tile-content`} style={{ backgroundImage: `url(${backgroundSrc})` }}>
                         <p className="brands__tile-title">{title}</p>
