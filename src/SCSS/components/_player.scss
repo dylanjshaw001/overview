@@ -2,7 +2,6 @@ $vinyl-size: 120px;
 
 .player {
   padding: 150px 0;
-  height: 100%;
   @include mq-max($breakpoint-md) {
     padding: 100px 0;
   }

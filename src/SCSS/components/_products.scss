@@ -1,9 +1,13 @@
 .products {
+    @include mq-max($breakpoint-md) {
+      grid-template-columns: 300px;
+    }
     &-container {
       padding: 100px 50px 100px 50px;
     }
     display: grid;
-    grid-template-columns: repeat(auto-fill, 400px);
+    // grid-template-columns: repeat(auto-fill, 325px);
+    grid-template-columns: 5fr 4fr;
     grid-auto-rows: 200px;
     grid-gap: 50px;
     justify-content: center;

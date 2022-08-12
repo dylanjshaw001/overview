@@ -26,16 +26,16 @@ const Nav = (props: NavProps):JSX.Element => {
   return (
     <div className={navClasses}>
       <div className={'nav-side'}>
-        <Link to="/">
+        {/* <Link to="/">
           <IconButton>
             <HomeIcon/>
           </IconButton>
-        </Link>
-        <Link to="/melophile">
+        </Link> */}
+        {/* <Link to="/melophile">
           <IconButton>
             <AlbumIcon/>
           </IconButton>
-        </Link>
+        </Link> */}
         <IconButton
           size="medium"
           className='nav-toggle nav-toggle--theme'

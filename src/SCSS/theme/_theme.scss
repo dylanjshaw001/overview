@@ -108,7 +108,6 @@
         }
       }
       &--light {
-        height: 100%;
         color: $color-text-light;
         &.home-page {
           color: $color-text-light;
@@ -119,7 +118,6 @@
       }
     }
     &--dark {
-      height: 100%;
       .player > .player-track-container > .player-track--option {
         filter: grayscale(1);
         &:hover {
